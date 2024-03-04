@@ -1,7 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { Component } from "https://cdn.skypack.dev/@astro/components";
-
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -67,39 +65,38 @@ const projects = (await getCollection('work'))
                     <td>
                         <h4 class="tableHeaders">Frontend</h4>
                         <ul>
-                            <li>JavaScript</li>
-                            <li>ReactJS</li>
-                            <li>React Native</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Tailwind</li>
+							<li><img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo"/> JavaScript</li>
+							<li><img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo"/> React</li>
+							<li><img src="https://skillicons.dev/icons?i=html" height="40" alt="html logo"/> HTML</li>
+							<li><img src="https://skillicons.dev/icons?i=css" height="40" alt="css logo"/> CSS</li>
+							<li><img src="https://skillicons.dev/icons?i=tailwind" height="40" alt="tailwind logo"/> Tailwind</li>
                         </ul>
                     </td>
                     <td>
-                        <h4>Backend</h4>
+                        <h4 class="tableHeaders">Backend</h4>
                         <ul>
-                            <li>Python</li>
-                            <li>ExpressJS</li>
-                            <li>NodeJS</li>
-                            <li>PostgreSQL</li>
-                            <li>MySQL</li>
-                            <li>AWS</li>
+							<li><img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"/> Python</li>
+							<li><img src="https://skillicons.dev/icons?i=express" height="40" alt="express logo"/> Express</li>
+							<li><img src="https://skillicons.dev/icons?i=nodejs" height="40" alt="node logo"/> Node JS</li>
+							<li><img src="https://skillicons.dev/icons?i=postgres" height="40" alt="psql logo"/> PSQL</li>
+							<li><img src="https://skillicons.dev/icons?i=mysql" height="40" alt="my sql logo"/> My SQL</li>
+							<li><img src="https://skillicons.dev/icons?i=aws" height="40" alt="aws logo"/> AWS</li>
                         </ul>
                     </td>
                     <td>
-                        <h4>QA</h4>
+                        <h4 class="tableHeaders">QA</h4>
                         <ul>
-                            <li>JEST</li>
-                            <li>GIT</li>
-                            <li>Test Driven Development (TDD)</li>
+							<li><img src="https://skillicons.dev/icons?i=jest" height="40" alt="jest logo"/> JEST</li>
+							<li><img src="https://skillicons.dev/icons?i=git" height="40" alt="git logo"/> GIT</li>
+							<li style="margin-right: 20px;"><img src="assets/teamwork.jpeg" width="45" alt="TDD logo"/> TDD</li>
                         </ul>
                     </td>
                     <td>
-                        <h4>Other</h4>
+                        <h4 class="tableHeaders">Other</h4>
                         <ul>
-                            <li>Confluence</li>
-                            <li>JIRA</li>
-                            <li>Power BI</li>
+							<li><img src="assets/confluence-seeklogo.svg" width="45" alt="Confluence logo"/> Confluence</li>
+							<li><img src="assets/jira-1.svg" width="45" alt="Jira logo"/> JIRA</li>
+							<li><img src="assets/New_Power_BI_Logo.svg" width="45" alt="Jira logo"/> Power BI</li>
                         </ul>
                     </td>
                 </tr>
@@ -186,37 +183,48 @@ const projects = (await getCollection('work'))
 	}
 
 	
-.table-icons {
+	.table-icons {
     border-spacing: 10px;
 	margin: -75px auto -100px;
-}
+	}	
+	
+	.tableHeaders {
+		text-align: center;
+	}
 
-.table-icons ul {
+	.table-icons li {
+	padding: 10px;
+	}
+
+	.table-icons li img {
+    margin-right: 10px;
+	vertical-align: middle;
+	}
+	.table-icons ul {
     list-style-type: none;
     padding-left: 0;
     margin: 0; 
 	margin-top: 20px;
-}
-
-
-.table-icons td {
+	}
+	
+	.table-icons td {
     padding: 75px;
-    text-align: center;
-    vertical-align: top; 
-}
+    text-align: left;
+    vertical-align: top;
+	}
 
-@media (max-width: 768px) {
-    .table-icons {
+	@media (max-width: 768px) {
+    	.table-icons {
         border-spacing: 5px; 
 		padding: 100px 0;
 		margin-top: -160px;
-    }
+    	}
 
-    .table-icons td {
+    	.table-icons td {
         display: block;
         margin-bottom: -100px; 
-    }
-}
+    	}
+	}
 
 .skills-section {
 	margin-top: -120px;
