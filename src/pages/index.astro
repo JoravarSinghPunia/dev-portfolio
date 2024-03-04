@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
+import { Component } from "https://cdn.skypack.dev/@astro/components";
+
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -53,53 +55,58 @@ const projects = (await getCollection('work'))
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
+		<div class="skills-section">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Skills</h3>
+					<p>These are the technologies that I am most familiar with! 👇🏽</p>
 				</header>
-
 				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-
-				<div class="cta">
-					<CallToAction href="/work/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
+            <table class="table-icons">
+                <tr>
+                    <td>
+                        <h4 class="tableHeaders">Frontend</h4>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>ReactJS</li>
+                            <li>React Native</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Tailwind</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <h4>Backend</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>ExpressJS</li>
+                            <li>NodeJS</li>
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                            <li>AWS</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <h4>QA</h4>
+                        <ul>
+                            <li>JEST</li>
+                            <li>GIT</li>
+                            <li>Test Driven Development (TDD)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <h4>Other</h4>
+                        <ul>
+                            <li>Confluence</li>
+                            <li>JIRA</li>
+                            <li>Power BI</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
 			</section>
-
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section>
+			</div>
 		</main>
 
 		<ContactCTA />
@@ -177,6 +184,50 @@ const projects = (await getCollection('work'))
 		mix-blend-mode: var(--bg-blend-mode);
 		z-index: -1;
 	}
+
+	
+.table-icons {
+    border-spacing: 10px;
+	margin: -75px auto -100px;
+}
+
+.table-icons ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0; 
+	margin-top: 20px;
+}
+
+
+.table-icons td {
+    padding: 75px;
+    text-align: center;
+    vertical-align: top; 
+}
+
+@media (max-width: 768px) {
+    .table-icons {
+        border-spacing: 5px; 
+		padding: 100px 0;
+		margin-top: -160px;
+    }
+
+    .table-icons td {
+        display: block;
+        margin-bottom: -100px; 
+    }
+}
+
+.skills-section {
+	margin-top: -120px;
+	margin-bottom: -90px;
+}
+
+@media (max-width: 768px) {
+	.skills-section {
+		margin: auto;
+	}
+}
 
 	.with-background.bg-variant::before {
 		--hero-bg: var(--bg-image-subtle-1);
