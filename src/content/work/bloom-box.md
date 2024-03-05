@@ -1,5 +1,5 @@
 ---
-title: Frontend News (Utilizing built API)
+title: The Byte Board (Utilizing RESTful API)
 publishDate: 2019-12-01 00:00:00
 img: /assets/byteboard.png
 img_alt: Thumbnail of site
