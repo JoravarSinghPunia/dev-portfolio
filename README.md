@@ -1,5 +1,3 @@
 # Joravar Singh Punia - Portfolio
 
-```sh
-Work in progress...
-```
+You can view my portfolio website by clicking [here](joravarsinghpunia.com)
